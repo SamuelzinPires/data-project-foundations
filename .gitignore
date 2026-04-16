@@ -1,0 +1,20 @@
+# Caches do Python e Pytest 
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+
+# Pastas de Ambiente Virtual
+.venv/
+venv/
+env/
+
+# Dados 
+data/input/
+data/output/
+*.csv
+
+# Específico do Projeto 
+README.md
+readme.md
