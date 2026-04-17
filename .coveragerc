@@ -1,0 +1,4 @@
+[report]
+# Linhas que o radar de cobertura deve ignorar
+exclude_lines =
+    if __name__ == .__main__.:
