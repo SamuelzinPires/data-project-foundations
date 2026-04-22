@@ -13,7 +13,7 @@ def test_extracao_dados(tmp_path):
     # extrai dados usando a função extract (passando o caminho do arquivo falso)
     df = extract(str(arquivo_falso))
     
-    # 3. Verifica se a função conseguiu extrair as 2 linhas que criamos
+    # Verifica se a função conseguiu extrair os dados corretamente 
     assert len(df) == 2, "Teste falhou: O DataFrame extraído não tem o tamanho esperado."
     assert not df.empty, "Teste falhou: O DataFrame está vazio."
     
