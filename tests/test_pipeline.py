@@ -4,14 +4,18 @@ import pytest
 # importar a ferramenta que construímos na outra pasta
 from src.pipeline import extract, transform, load
 
-def test_extracao_dados():
+def test_extracao_dados(tmp_path):
     """Garante que a função extract consegue ler o arquivo e não retorna vazio."""
+
+    arquivo_falso = tmp_path / "dados_simulados.csv"
+    arquivo_falso.write_text("nome,idade,cidade\nSamuel,25,Goiania\nTeste,99,Nenhuma", encoding="utf-8")
     
-    #Definindo o caminho
-    Dados = ("data/input/dados_brutos.csv")
+    # extrai dados usando a função extract (passando o caminho do arquivo falso)
+    df = extract(str(arquivo_falso))
     
-    # Extrair os dados usando a função extract
-    df = extract(Dados)
+    # 3. Verifica se a função conseguiu extrair as 2 linhas que criamos
+    assert len(df) == 2, "Teste falhou: O DataFrame extraído não tem o tamanho esperado."
+    assert not df.empty, "Teste falhou: O DataFrame está vazio."
     
     # Mensagem de erro embutida para o caso de falha
     assert len(df) > 0
