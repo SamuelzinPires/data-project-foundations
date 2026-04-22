@@ -1,16 +1,16 @@
-nome: CI Pipilene - Data Foundation
+name: CI Pipeline - Data Foundations
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
-  testes:
+  test:
     runs-on: ubuntu-latest
-steps:
-      - name: Checkout do código
+    steps:
+      - name: Checkout do codigo
         uses: actions/checkout@v4
 
       - name: Instalar Python 3.10
@@ -21,7 +21,7 @@ steps:
       - name: Instalar Poetry
         run: curl -sSL https://install.python-poetry.org | python3 -
 
-      - name: Instalar dependências do projeto
+      - name: Instalar dependencias do projeto
         run: poetry install
 
       - name: Executar Pytest com Coverage
