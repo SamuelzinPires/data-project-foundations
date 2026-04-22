@@ -16,6 +16,4 @@ data/output/
 *.csv
 
 # Específico do Projeto 
-README.md
-readme.md
 .vscode/
