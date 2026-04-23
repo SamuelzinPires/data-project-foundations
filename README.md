@@ -1,4 +1,3 @@
-````markdown
 # Data Project Foundations
 
 [![CI Pipeline](https://github.com/SamuelzinPires/data-project-foundations/actions/workflows/ci.yml/badge.svg)](https://github.com/SamuelzinPires/data-project-foundations/actions/workflows/ci.yml)
